@@ -13,10 +13,24 @@ return {
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
         --  If you are experiencing weird indenting issues, add the language to
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
-        additional_vim_regex_highlighting = { 'ruby' },
+        additional_vim_regex_highlighting = true,
+        -- additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
+    config = function()
+      vim.filetype.add {
+        pattern = { ['.*/hypr/.*%.conf'] = 'hyprlang' },
+      }
+
+      -- Run treesitter highlight for tsx files
+      vim.api.nvim_create_autocmd('VimEnter', {
+        desc = 'enable highlighting on enter',
+        group = vim.api.nvim_create_augroup('tshighlight', { clear = true }),
+        pattern = '*.tsx',
+        command = 'TSEnable highlight',
+      })
+    end,
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --

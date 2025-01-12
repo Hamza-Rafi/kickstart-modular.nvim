@@ -187,8 +187,29 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
+        ts_ls = {
+          init_options = {
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                location = '/home/hamza/.local/share/pnpm/global/5/node_modules/@vue/typescript-plugin',
+                languages = { 'javascript', 'typescript', 'vue' },
+              },
+            },
+          },
+          filetypes = {
+            'javascript',
+            'typescript',
+            'typescriptreact',
+            'javascriptreact',
+            'vue',
+          },
+        },
+        volar = {
+          filetypes = {
+            'vue',
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -205,6 +226,18 @@ return {
           },
         },
       }
+      -- Hyprlang LSP
+      vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
+        pattern = { '*.hl', 'hypr*.conf' },
+        callback = function(event)
+          print(string.format('starting hyprls for %s', vim.inspect(event)))
+          vim.lsp.start {
+            name = 'hyprlang',
+            cmd = { 'hyprls' },
+            root_dir = vim.fn.getcwd(),
+          }
+        end,
+      })
 
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
