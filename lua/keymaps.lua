@@ -36,7 +36,7 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '<leader>cm', '<cmd>Mason<cr>', { desc = 'Mason' })
-vim.keymap.set('n', '<leader>cl', '<cmd>Lazy<cr>', { desc = 'lazy.nvim' })
+vim.keymap.set('n', '<leader>clz', '<cmd>Lazy<cr>', { desc = 'lazy.nvim' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
