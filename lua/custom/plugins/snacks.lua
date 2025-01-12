@@ -20,4 +20,13 @@ return {
       },
     },
   },
+  keys = {
+    {
+      '<leader>n',
+      function()
+        Snacks.notifier.show_history()
+      end,
+      desc = 'notifier history',
+    },
+  },
 }
