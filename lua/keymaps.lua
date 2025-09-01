@@ -42,6 +42,20 @@ vim.keymap.set('n', '<leader>clz', '<cmd>Lazy<cr>', { desc = 'lazy.nvim' })
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<S-Tab>', ':bprev<CR>', { desc = 'Previous buffer' })
 
+vim.keymap.set('n', '<leader>bn', '<cmd>BufferLineMoveNext<CR>', { desc = '[B]uffer [N]ext' })
+vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineMovePrev<CR>', { desc = '[B]uffer [P]revious' })
+
+-- Reorder buffers
+vim.keymap.set('n', '<leader>bl', '<cmd>BufferLineMoveNext<CR>', { desc = '[B]uffer move [L] -> right' })
+vim.keymap.set('n', '<leader>bh', '<cmd>BufferLineMovePrev<CR>', { desc = '[B]uffer move [H] <- left' })
+
+-- Pick buffer by number
+vim.keymap.set('n', '<leader>bb', '<cmd>BufferLinePick<CR>', { desc = '[B]uffer [B]y pick' })
+
+-- Close buffer from bufferline
+vim.keymap.set('n', '<leader>bc', '<cmd>BufferLinePickClose<CR>', { desc = '[B]uffer [C]lose by pick' })
+vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[B]uffer [D]elete' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
