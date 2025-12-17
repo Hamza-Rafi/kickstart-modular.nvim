@@ -205,7 +205,7 @@ return {
             'vue',
           },
         },
-        volar = {
+        vue_ls = {
           filetypes = {
             'vue',
           },
