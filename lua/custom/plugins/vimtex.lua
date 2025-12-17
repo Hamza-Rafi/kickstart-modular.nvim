@@ -16,5 +16,8 @@ return {
     vim.g.vimtex_quickfix_mode = 0 -- don’t auto-open quickfix on warnings
     vim.g.vimtex_mappings_enabled = 1 -- keep default mappings like \ll, \lv
     vim.g.vimtex_syntax_enabled = 1
+
+    -- Force atomic writes (write to temp, then rename)
+    vim.opt.backupcopy = 'yes'
   end,
 }
