@@ -4,8 +4,9 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
+      default_file_explorer = true,
       win_options = {
-        signcolumn = 'yes:2',
+        signcolumn = 'auto:2',
       },
       view_options = {
         show_hidden = true,

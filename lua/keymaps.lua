@@ -54,7 +54,6 @@ vim.keymap.set('n', '<leader>bb', '<cmd>BufferLinePick<CR>', { desc = '[B]uffer 
 
 -- Close buffer from bufferline
 vim.keymap.set('n', '<leader>bc', '<cmd>BufferLinePickClose<CR>', { desc = '[B]uffer [C]lose by pick' })
-vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[B]uffer [D]elete' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
