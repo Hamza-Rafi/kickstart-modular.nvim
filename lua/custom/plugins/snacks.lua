@@ -19,8 +19,21 @@ return {
     scope = { enabled = true },
     words = { enabled = true },
     lazygit = { enabled = true },
-    picker = { enabled = true },
-    explorer = { enabled = true, replace_netrw = false, trash = true },
+    picker = {
+      enabled = true,
+      sources = {
+        explorer = {
+          hidden = true,
+          ignored = true,
+          auto_close = true,
+        },
+      },
+    },
+    explorer = {
+      enabled = false,
+      replace_netrw = false,
+      trash = true,
+    },
     git = { enabled = true },
     image = { enabled = true },
     styles = {
@@ -60,7 +73,7 @@ return {
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>sn", function() Snacks.picker.notifications() end, desc = "Search Notifications" },
-    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+    -- { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
 
     -- find
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
